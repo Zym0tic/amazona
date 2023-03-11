@@ -3,9 +3,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <a href="/">Amazona</a>
-       <main>list products</main>
+       <a href="/">amazona</a>
       </header>
+       <main>list products</main>
     </div>
   );
 }
