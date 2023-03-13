@@ -8,9 +8,9 @@ function App() {
       </header>
        <main>
         <h1>Featured Products</h1>
-        {
-            Data.products.map( product => (
-              <div key={product.slug}>
+        <div className='products'>
+        {Data.products.map( product => (
+              <div className='product' key={product.slug}>
                 <img src={product.image} alt={product.name} />
                 <p>
                   {product.name}
@@ -21,6 +21,7 @@ function App() {
               </div>
             ))
         }
+        </div>
           </main>
 
     </div>

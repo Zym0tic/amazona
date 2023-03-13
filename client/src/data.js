@@ -35,6 +35,18 @@ const Data = {
             numReviews: 14,
             description:'high quality pants',
         },
+        {
+            name: 'Nike slim pant',
+            slug: 'nike-slim-pant',
+            category: 'Pants',
+            image:'/images/p4.jpg',
+            price: 25,
+            countInStock: 15,
+            brand:'Nike',
+            rating: 4.5,
+            numReviews: 14,
+            description:'high quality pants',
+        },
     ],
 };
 
