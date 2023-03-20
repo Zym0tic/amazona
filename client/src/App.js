@@ -1,30 +1,30 @@
-import Data from "./data";
-
+import Data from './data';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <a href="/">amazona</a>
+        <a href="/">amazona</a>
       </header>
-       <main>
+      <main>
         <h1>Featured Products</h1>
-        <div className='products'>
-        {Data.products.map( product => (
-              <div className='product' key={product.slug}>
-                <img src={product.image} alt={product.name} />
-                <p>
-                  {product.name}
-                </p>
-                <p>
-                  {product.price}
-                </p>
+        <div className="products">
+          {Data.products.map((product) => (
+            <div className="product" key={product.slug}>
+              <a href={`/product/${product.slug}`}>
+              <img src={product.image} alt={product.name} />
+              </a>
+              <div className="product-info">
+              <a href={`/product/${product.slug}`}>
+                <p>{product.name}</p>
+                </a>
+                <p><strong>${product.price}</strong></p>
+                <button>add to cart</button>
               </div>
-            ))
-        }
+            </div>
+          ))}
         </div>
-          </main>
-
+      </main>
     </div>
   );
 }
