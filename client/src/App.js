@@ -1,12 +1,18 @@
 import Data from './data';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import HomeScreen from './screens/HomeScreen';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
         <a href="/">amazona</a>
       </header>
       <main>
+        <Routes>
+          <Route path='/' element={<HomeScreen />} />
+        </Routes>
         <h1>Featured Products</h1>
         <div className="products">
           {Data.products.map((product) => (
@@ -26,6 +32,7 @@ function App() {
         </div>
       </main>
     </div>
+    </BrowserRouter>
   );
 }
 
