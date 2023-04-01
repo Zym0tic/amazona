@@ -24,7 +24,7 @@ function HomeScreen() {
     loading: true,
     error: '',
   });
-  // const [products, setProducts] = useState([]);
+ 
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -34,7 +34,6 @@ function HomeScreen() {
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.messege });
       }
-      // setProducts(result.data);
     };
     fetchData();
   }, []);
