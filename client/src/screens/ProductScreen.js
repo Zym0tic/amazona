@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useReducer } from 'react';
+import Col from 'react-bootstrap/esm/Col';
+import Row from 'react-bootstrap/esm/Row';
+import ListGroup from 'react-bootstrap/esm/ListGroup';
 import { useParams } from 'react-router-dom';
+import Rating from '../components/Rating';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -43,7 +47,34 @@ function ProductScreen() {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div>{product.name}</div>
+    <div>
+      <Row>
+        <Col md={6}>
+          <img
+            className="img-large"
+            src={product.image}
+            alt={product.name}
+          ></img>
+        </Col>
+        <Col md={3}>
+          <ListGroup variant='flush'>
+            <ListGroup.Item>
+              <h1>{product.name}</h1>
+            </ListGroup.Item>
+            <ListGroup.Item>
+             <Rating rating={product.rating} numreviews={product.numreviews}></Rating>
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Price: ${product.price}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             <p>{product.description}</p>
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
+        <Col md={3}></Col>
+      </Row>
+    </div>
   );
 }
 
