@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import Button from 'react-bootstrap/esm/Button';
+import Card from 'react-bootstrap/Card';
 
 function CartScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -45,7 +46,7 @@ function CartScreen() {
                                     <i className="fas fa-minus-circle"></i>
                                 </Button>{' '}
                                 <span>{item.quantity}</span>{' '}
-                                <Button variant="light" disabled={item.quantity === 1}>
+                                <Button variant="light" disabled={item.quantity === item.countInStock}>
                                     <i className="fas fa-plus-circle"></i>
                                 </Button>
                             </Col>
@@ -61,7 +62,15 @@ function CartScreen() {
             </ListGroup>
           )}
         </Col>
-        <Col md={4}></Col>
+        <Col md={4}>
+            {/* <Card>
+                <Card.Body>
+                    <ListGroup variant="flush">
+                        <ListGroupItem></ListGroupItem>
+                    </ListGroup>
+                </Card.Body>
+            </Card> */}
+        </Col>
       </Row>
     </div>
   );

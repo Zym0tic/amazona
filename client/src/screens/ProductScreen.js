@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/esm/Row';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/esm/ListGroup';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Rating from '../components/Rating';
 import Button from 'react-bootstrap/esm/Button';
 import { Helmet } from 'react-helmet-async';
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 };
 
 function ProductScreen() {
+  const navigate = useNavigate()
   const params = useParams();
   const { slug } = params;
 
@@ -66,6 +67,7 @@ function ProductScreen() {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
+    navigate('/cart');
   };
 
   return loading ? (
@@ -82,7 +84,7 @@ function ProductScreen() {
             alt={product.name}
           ></img>
         </Col>
-        <Col md={3}>mk
+        <Col md={3}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
