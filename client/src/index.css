@@ -48,6 +48,6 @@ main {
   min-width: 100%;
 }
 
-img-thumbnail {
+.img-thumbnail {
   height: 80px;
 }

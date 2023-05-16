@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Col from 'react-bootstrap/esm/Col';
-import ListGroupItem from 'react-bootstrap/esm/ListGroup';
-import ListGroup from 'react-bootstrap/ListGroupItem';
+import ListGroup from 'react-bootstrap/esm/ListGroup';
+// import ListGroup from 'react-bootstrap/ListGroupItem';
 import Row from 'react-bootstrap/esm/Row';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -31,7 +31,7 @@ function CartScreen() {
           ) : (
             <ListGroup>
                 {cartItems.map((item) => (
-                    <ListGroupItem key={item._id}>
+                    <ListGroup.Item key={item._id}>
                         <Row className='align-items-center'>
                             <Col md={4}>
                                 <img 
@@ -57,7 +57,7 @@ function CartScreen() {
                                 </Button>
                             </Col>
                         </Row>
-                    </ListGroupItem>
+                    </ListGroup.Item>
                 ))}
             </ListGroup>
           )}
