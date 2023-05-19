@@ -19,7 +19,7 @@ const Data = {
             slug: 'adidas-fit-shirt',
             image:'/images/p2.jpg',
             price: 250,
-            countInStock: 0,
+            countInStock: 6,
             brand: 'Nike',
             rating: 2,
             numReviews: 10,
